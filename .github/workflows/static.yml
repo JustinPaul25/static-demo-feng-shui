@@ -1,0 +1,19 @@
+# Optional: validates the static site on push. GitHub Pages can still use
+# Settings → Pages → Deploy from branch → / (root) without this workflow.
+name: Static site
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify entrypoint
+        run: test -f index.html && test -f css/styles.css && test -f js/app.js

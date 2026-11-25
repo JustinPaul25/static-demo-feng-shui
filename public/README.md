@@ -1,0 +1,1 @@
+Site files live at the **repository root** (`index.html`, `css/`, `js/`) for GitHub Pages deployment.
